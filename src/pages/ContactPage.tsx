@@ -1,0 +1,61 @@
+import React from 'react';
+import ContactForm from '../components/contact/ContactForm';
+import ContactInfo from '../components/contact/ContactInfo';
+
+const ContactPage: React.FC = () => {
+  return (
+    <>
+      {/* Header */}
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-neutral-900 text-white relative">
+        <div className="absolute inset-0 z-0 opacity-40">
+          <img
+            src="https://images.pexels.com/photos/821754/pexels-photo-821754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            alt="Contact background"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contact Us</h1>
+            <p className="text-xl text-neutral-300 mb-8">
+              Reach out to discuss your photography or videography needs. We'd love to hear from you!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form and Info */}
+      <section className="py-16 md:py-24 bg-neutral-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              <ContactForm />
+            </div>
+            <div>
+              <ContactInfo />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="h-[400px] bg-neutral-200 relative">
+        <div className="absolute inset-0">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304605!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1655903184517!5m2!1sen!2s"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={false}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Location map"
+          ></iframe>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ContactPage;
