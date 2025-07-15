@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from '../assets/logo/logo.png';
+import logo from "../assets/logo/logo.png";
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -25,8 +25,8 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         <NavLink to="/" className="flex items-center">
           <img
             src={logo}
-            alt="LensLife Logo"
-            className="h-20 w-auto object-contain"
+            alt="Moti Creation Logo"
+            className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
           />
         </NavLink>
 
