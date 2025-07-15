@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import HeroCover from '../../assets/logo/cover.jpg';
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video or Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.pexels.com/photos/3812944/pexels-photo-3812944.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080"
+          src={HeroCover}
           alt="Hero Background"
           className="object-cover w-full h-full"
         />

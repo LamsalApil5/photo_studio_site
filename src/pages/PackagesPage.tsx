@@ -2,7 +2,6 @@ import React from 'react';
 import PricingCard from '../components/packages/PricingCard';
 import { Link } from 'react-router-dom';
 import { packageData } from '../data/packages';
-import { faqData } from '../data/faq';
 
 const PackagesPage: React.FC = () => {
   return (
@@ -85,46 +84,6 @@ const PackagesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="py-16 md:py-20 bg-neutral-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-bold text-neutral-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-neutral-700 max-w-3xl mx-auto">
-              Find answers to common questions about our services, booking process, and more.
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              {faqData.map((faq) => (
-                <details 
-                  key={faq.id} 
-                  className="group bg-white p-6 rounded-lg shadow-sm border border-neutral-200 open:shadow-md transition-all duration-300"
-                >
-                  <summary className="list-none flex justify-between items-center cursor-pointer">
-                    <h3 className="text-lg font-semibold text-neutral-900">{faq.question}</h3>
-                    <span className="ml-4 flex-shrink-0 text-neutral-500 group-open:rotate-180 transition-transform duration-300">
-                      <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-                        <path 
-                          stroke="currentColor" 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth="2" 
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="mt-4 text-neutral-700">
-                    <p>{faq.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-amber-700 text-white">

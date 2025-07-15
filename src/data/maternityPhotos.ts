@@ -1,56 +1,24 @@
-export const maternityPhotos = [
-  {
-    id: 'm1',
-    url: 'https://images.pexels.com/photos/3662824/pexels-photo-3662824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Sunset Silhouette',
-    category: 'Outdoor'
-  },
-  {
-    id: 'm2',
-    url: 'https://images.pexels.com/photos/8939990/pexels-photo-8939990.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Studio Elegance',
-    category: 'Studio'
-  },
-  {
-    id: 'm3',
-    url: 'https://images.pexels.com/photos/6045028/pexels-photo-6045028.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'At Home Comfort',
-    category: 'Home'
-  },
-  {
-    id: 'm4',
-    url: 'https://images.pexels.com/photos/7282842/pexels-photo-7282842.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Parents To Be',
-    category: 'Couples'
-  },
-  {
-    id: 'm5',
-    url: 'https://images.pexels.com/photos/6045037/pexels-photo-6045037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Natural Light Portrait',
-    category: 'Studio'
-  },
-  {
-    id: 'm6',
-    url: 'https://images.pexels.com/photos/5808388/pexels-photo-5808388.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Forest Maternity',
-    category: 'Outdoor'
-  },
-  {
-    id: 'm7',
-    url: 'https://images.pexels.com/photos/7282843/pexels-photo-7282843.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Romantic Couple',
-    category: 'Couples'
-  },
-  {
-    id: 'm8',
-    url: 'https://images.pexels.com/photos/6507483/pexels-photo-6507483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Home Lifestyle',
-    category: 'Home'
-  },
-  {
-    id: 'm9',
-    url: 'https://images.pexels.com/photos/6224424/pexels-photo-6224424.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'Beach Sunset',
-    category: 'Outdoor'
-  }
-];
+// src/data/maternityLoader.js
+
+// Import jpg, jpeg, png files from assets/maternityImage/category folders eagerly
+const maternityFiles = import.meta.glob('../assets/maternityImage/**/*.{jpg,jpeg,png}', { eager: true });
+
+// Helper to extract category and filename
+const getMetadata = (filePath: string) => {
+  const parts = filePath.split('/');
+  const category = parts[parts.length - 2]; // folder before the filename
+  const fileName = parts[parts.length - 1]; // file name with extension
+  return { category, fileName };
+};
+
+export const maternityPhotos = Object.entries(maternityFiles).map(([path, mod], index) => {
+  const { category, fileName } = getMetadata(path);
+  const url = (mod as { default: string }).default;
+
+  return {
+    id: `m${index + 1}`, // simple incremental id
+    category,
+    title: fileName.replace(/\.[^/.]+$/, '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+    url
+  };
+});
