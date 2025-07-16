@@ -1,10 +1,15 @@
-import React from 'react';
-import ContactForm from '../components/contact/ContactForm';
-import ContactInfo from '../components/contact/ContactInfo';
+import React from "react";
+import ContactForm from "../components/contact/ContactForm";
+import ContactInfo from "../components/contact/ContactInfo";
+import seoData from "../data/seoData";
+import Seo from "../components/Seo";
 
 const ContactPage: React.FC = () => {
+  const { title, description, keywords, image, url } = seoData.contact;
+
   return (
     <>
+      <Seo {...{ title, description, keywords, image, url }} />
       {/* Header */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-neutral-900 text-white relative">
         <div className="absolute inset-0 z-0 opacity-40">
@@ -17,9 +22,12 @@ const ContactPage: React.FC = () => {
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
+              Contact Us
+            </h1>
             <p className="text-xl text-neutral-300 mb-8">
-              Reach out to discuss your photography or videography needs. We'd love to hear from you!
+              Reach out to discuss your photography or videography needs. We'd
+              love to hear from you!
             </p>
           </div>
         </div>

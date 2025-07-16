@@ -1,24 +1,26 @@
-import React from 'react';
-import Hero from '../components/home/Hero';
-import Services from '../components/home/Services';
-import Testimonials from '../components/home/Testimonials';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Hero from "../components/home/Hero";
+import Services from "../components/home/Services";
+import Testimonials from "../components/home/Testimonials";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Import sample data
-import { photos } from '../data/photos';
-import PhotoGrid from '../components/gallery/PhotoGrid';
+import { photos } from "../data/photos";
+import PhotoGrid from "../components/gallery/PhotoGrid";
+import seoData from "../data/seoData";
+import Seo from "../components/Seo";
 
 const featuredPhotos = photos.slice(0, 6);
-const categories = ['Wedding', 'Portrait', 'Family', 'Event', 'Commercial'];
+const categories = ["Wedding", "Portrait", "Family", "Event", "Commercial"];
+const { title, description, keywords, image, url } = seoData.home;
 
 const HomePage: React.FC = () => {
   return (
     <>
+      <Seo {...{ title, description, keywords, image, url }} />
       <Hero />
-      
       <Services />
-      
       {/* Featured Work */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -27,12 +29,13 @@ const HomePage: React.FC = () => {
               Featured Work
             </h2>
             <p className="text-neutral-600 max-w-3xl mx-auto">
-              Browse through our portfolio of captivating images that tell unique stories.
+              Browse through our portfolio of captivating images that tell
+              unique stories.
             </p>
           </div>
-          
+
           <PhotoGrid photos={featuredPhotos} categories={categories} />
-          
+
           <div className="text-center mt-10">
             <Link
               to="/portfolio"
@@ -44,9 +47,7 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      
       <Testimonials />
-      
       {/* CTA Section */}
       <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4">
@@ -57,7 +58,8 @@ const HomePage: React.FC = () => {
                   Ready to Capture Your Special Moments?
                 </h2>
                 <p className="text-amber-100 mb-8 text-lg">
-                  Book a session today and let us create beautiful memories that will last a lifetime.
+                  Book a session today and let us create beautiful memories that
+                  will last a lifetime.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
