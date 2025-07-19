@@ -1,12 +1,10 @@
 import React from "react";
 import PhotoGrid from "../components/gallery/PhotoGrid";
-import { photos } from "../data/photos";
+import { photos, categories } from "../data/photos";
 import seoData from "../data/seoData";
 import Seo from "../components/Seo";
 
 const PortfolioPage: React.FC = () => {
-  const categories = ["Wedding", "Portrait", "Family", "Event", "Commercial"];
-
   const { title, description, keywords, image, url } = seoData.portfolio;
 
   return (
@@ -41,25 +39,24 @@ const PortfolioPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Info Section */}
+      {/* Info Section - Simplified English for Nepali Audience */}
       <section className="py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="md:flex md:items-center md:gap-12">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-3xl font-serif font-bold text-neutral-900 mb-4">
-                Our Photography Approach
+                Our Photography Style
               </h2>
               <p className="text-neutral-700 mb-6">
-                We believe each moment tells a unique story. Our approach
-                combines technical expertise with artistic vision to create
-                stunning visuals that capture authentic emotions and timeless
-                memories.
+                We believe every moment has its own story. Our style mixes
+                technical skills with creativity to take beautiful photos that
+                show real emotions and special memories.
               </p>
               <p className="text-neutral-700 mb-6">
-                From pre-planning to final delivery, we work closely with our
-                clients to understand their vision and exceed their
-                expectations. Our attention to detail ensures that every image
-                we create is a true reflection of the moment.
+                From planning to the final photo delivery, we work closely with
+                our clients. We listen to your ideas and go beyond your
+                expectations. We focus on every small detail so that each photo
+                truly reflects your moment.
               </p>
               <div className="flex flex-wrap gap-3 mt-8">
                 <span className="bg-neutral-100 text-neutral-800 px-4 py-2 rounded-full text-sm">
@@ -72,7 +69,7 @@ const PortfolioPage: React.FC = () => {
                   Creative Direction
                 </span>
                 <span className="bg-neutral-100 text-neutral-800 px-4 py-2 rounded-full text-sm">
-                  Post-Processing
+                  Photo Editing
                 </span>
                 <span className="bg-neutral-100 text-neutral-800 px-4 py-2 rounded-full text-sm">
                   Color Grading

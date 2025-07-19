@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import PricingCard from "../components/packages/PricingCard";
 import { Link } from "react-router-dom";
-import { packageData } from "../data/packages";
 import seoData from "../data/seoData";
 import Seo from "../components/Seo";
+import { packageData } from "../data/packages";
+import BookingForm from "../components/packages/BookingForm";
 
 const PackagesPage: React.FC = () => {
   const { title, description, keywords, image, url } = seoData.packages;
 
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
+
+  const openBookingForm = (pkgName: string) => {
+    setSelectedPackage(pkgName);
+  };
+
+  const closeBookingForm = () => {
+    setSelectedPackage(null);
+  };
+
   return (
     <>
-    <Seo {...{ title, description, keywords, image, url }} />
+      <Seo {...{ title, description, keywords, image, url }} />
       {/* Header */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-neutral-900 text-white relative">
         <div className="absolute inset-0 z-0 opacity-30">
@@ -49,7 +60,11 @@ const PackagesPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packageData.photography.map((pkg) => (
-              <PricingCard key={pkg.id} package={pkg} />
+              <PricingCard
+                key={pkg.id}
+                package={pkg}
+                onBook={openBookingForm}
+              />
             ))}
           </div>
         </div>
@@ -70,7 +85,11 @@ const PackagesPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packageData.videography.map((pkg) => (
-              <PricingCard key={pkg.id} package={pkg} />
+              <PricingCard
+                key={pkg.id}
+                package={pkg}
+                onBook={openBookingForm}
+              />
             ))}
           </div>
         </div>
@@ -124,6 +143,11 @@ const PackagesPage: React.FC = () => {
           </Link>
         </div>
       </section>
+
+      {/* Booking Modal */}
+      {selectedPackage && (
+        <BookingForm packageName={selectedPackage} onClose={closeBookingForm} />
+      )}
     </>
   );
 };

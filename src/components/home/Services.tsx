@@ -1,54 +1,65 @@
-import React from 'react';
-import { Camera, Video, Users, HeartPulse, Building2, CalendarDays } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Camera,
+  Video,
+  Users,
+  HeartPulse,
+  Building2,
+  CalendarDays,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
     icon: <Camera className="h-8 w-8 text-amber-700" />,
-    title: 'Wedding Photography',
-    description: 'Capture the magic of your special day with our professional wedding photography services.',
+    title: 'Wedding & Pre-Wedding',
+    description: 'We capture the love, emotions, and beautiful details of your engagement and wedding day in a timeless way.',
     path: '/portfolio',
   },
   {
     icon: <Video className="h-8 w-8 text-amber-700" />,
-    title: 'Videography',
-    description: 'Professional video production for weddings, events, commercials, and creative projects.',
+    title: 'Cinematic Videography',
+    description: 'High-quality video coverage for weddings, music videos, traditional events, and more, perfect for memories and sharing.',
     path: '/video-gallery',
   },
   {
     icon: <HeartPulse className="h-8 w-8 text-amber-700" />,
-    title: 'Maternity Sessions',
-    description: 'Beautiful maternity portraits to celebrate the miracle of new life.',
+    title: 'Maternity & Baby Sessions',
+    description: 'Gentle and joyful photography for pregnancy, newborns, Pasni (rice feeding), and Bhat Khuwai celebrations.',
     path: '/maternity',
   },
   {
     icon: <Users className="h-8 w-8 text-amber-700" />,
-    title: 'Family Portraits',
-    description: 'Timeless family portraits that capture the unique bond between loved ones.',
-    path: '/portfolio',
-  },
-  {
-    icon: <Building2 className="h-8 w-8 text-amber-700" />,
-    title: 'Commercial Photography',
-    description: 'High-quality commercial photography for businesses, products, and marketing needs.',
+    title: 'Family & Couple Portraits',
+    description: 'Natural and warm portraits for couples, families, and kids — perfect for frames, gifts, and memories.',
     path: '/portfolio',
   },
   {
     icon: <CalendarDays className="h-8 w-8 text-amber-700" />,
-    title: 'Event Coverage',
-    description: 'Comprehensive coverage of corporate events, parties, and special occasions.',
+    title: 'Nepali Traditions & Ceremonies',
+    description: 'We respectfully capture important events like Bratabandha, Gufa, birthdays, house puja, and more.',
+    path: '/portfolio',
+  },
+  {
+    icon: <Building2 className="h-8 w-8 text-amber-700" />,
+    title: 'Business & Product Shoots',
+    description: 'Professional photos and videos for businesses, products, brands, restaurants, and social media content.',
     path: '/portfolio',
   },
 ];
+
 
 const Services: React.FC = () => {
   return (
     <section className="py-16 md:py-24 bg-neutral-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-neutral-900 mb-4">
+            Our Services
+          </h2>
           <p className="text-neutral-600 max-w-3xl mx-auto">
-            We offer a wide range of photography and videography services to meet all your visual storytelling needs.
+            We offer a wide range of photography and videography services to
+            meet all your visual storytelling needs.
           </p>
         </div>
 
@@ -59,13 +70,15 @@ const Services: React.FC = () => {
               className="bg-white rounded-lg shadow-md p-6 transition-transform hover:translate-y-[-5px] hover:shadow-lg"
             >
               <div className="mb-4">{service.icon}</div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-2">{service.title}</h3>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                {service.title}
+              </h3>
               <p className="text-neutral-600 mb-4">{service.description}</p>
               <Link
                 to={service.path}
                 className="text-amber-700 font-medium hover:text-amber-800 transition-colors inline-flex items-center"
               >
-                Learn More
+                View
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4 ml-1"

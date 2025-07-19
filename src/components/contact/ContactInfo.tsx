@@ -6,13 +6,13 @@ import {
   Clock,
   Instagram,
   Facebook,
-  Twitter,
   Youtube,
 } from "lucide-react";
+import { BsTiktok } from "react-icons/bs";
 
 const ContactInfo: React.FC = () => {
   return (
-    <div className="bg-neutral-900 text-white rounded-lg shadow-md p-6 md:p-8 h-full">
+    <div className="bg-red-900 text-white rounded-lg shadow-md p-6 md:p-8 h-full">
       <h2 className="text-2xl font-serif font-bold mb-6">
         Contact Information
       </h2>
@@ -24,7 +24,7 @@ const ContactInfo: React.FC = () => {
             className="text-amber-500 mt-1 mr-3 flex-shrink-0"
           />
           <div>
-            <h3 className="font-medium text-amber-300 mb-1">Our Location</h3>
+            <h3 className="font-medium text- mb-1">Our Location</h3>
             <p className="text-neutral-300">
               Dulegaunda, Bhimad
               <br />
@@ -88,9 +88,9 @@ const ContactInfo: React.FC = () => {
           <a
             href="#"
             className="bg-white/10 hover:bg-amber-700 transition-colors p-2 rounded-full"
-            aria-label="Twitter"
+            aria-label="Tiktok"
           >
-            <Twitter size={20} className="text-white" />
+            <BsTiktok size={20} className="text-white" />
           </a>
           <a
             href="#"

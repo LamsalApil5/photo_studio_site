@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import ScrollToTop from './ScrollToTop';
+import WhatsAppButton from './WhatsAppButton';
 
 const Layout: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,6 +22,7 @@ const Layout: React.FC = () => {
       <Navbar isScrolled={isScrolled} />
       <main className="flex-grow">
         <Outlet />
+         <WhatsAppButton />
       </main>
       <Footer />
       <ScrollToTop />

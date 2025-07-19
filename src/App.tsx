@@ -11,8 +11,11 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { HelmetProvider } from "react-helmet-async";
 import { Suspense } from "react";
 import Loader from "./components/Loader";
+import useAntiInspect from "./contexts/useAntiInspect";
 
 function App() {
+  useAntiInspect();
+
   return (
     <HelmetProvider>
       <AuthProvider>

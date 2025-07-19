@@ -1,6 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin, Camera, Youtube } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Instagram,
+  Facebook,
+  Mail,
+  Phone,
+  MapPin,
+  Youtube,
+} from "lucide-react";
+import logo from "../assets/logo/logoMC.png";
+import { FaTiktok } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
@@ -10,17 +19,42 @@ const Footer: React.FC = () => {
           {/* Logo and About */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Camera size={24} className="text-amber-500" />
-              <span className="font-serif text-xl font-bold tracking-tight">Moti Creation</span>
+              <img
+                src={logo} // make sure `logo` is imported correctly
+                alt="Moti Creation Logo"
+                className="w-12" // 6 * 4px = 24px
+              />
+              <span className="font-serif text-xl font-bold tracking-tight">
+                Moti Creation
+              </span>
             </div>
+
             <p className="text-neutral-400 text-sm mt-4 max-w-xs">
-              Capturing life's precious moments with artistic elegance and technical precision since 2018.
+              Moti Creation captures life’s precious moments with artistic style
+              and precise technique. Since 2018, it has turned memories into
+              timeless stories through creative and elegant photography.
             </p>
             <div className="flex space-x-4 pt-2">
-              <SocialLink href="#" icon={<Instagram size={18} />} label="Instagram" />
-              <SocialLink href="https://www.facebook.com/moticreationnepal" icon={<Facebook size={18} />} label="Facebook" />
-              <SocialLink href="#" icon={<Twitter size={18} />} label="Twitter" />
-              <SocialLink href="https://www.youtube.com/channel/UCsdb-55lSvMJOQ5kEa13U2A" icon={<Youtube size={18} />} label="Youtube" />
+              <SocialLink
+                href="#"
+                icon={<Instagram size={18} />}
+                label="Instagram"
+              />
+              <SocialLink
+                href="https://www.facebook.com/moticreationnepal"
+                icon={<Facebook size={18} />}
+                label="Facebook"
+              />
+              <SocialLink
+                href="#"
+                icon={<FaTiktok size={18} />}
+                label="Tiktok"
+              />
+              <SocialLink
+                href="https://www.youtube.com/channel/UCsdb-55lSvMJOQ5kEa13U2A"
+                icon={<Youtube size={18} />}
+                label="Youtube"
+              />
             </div>
           </div>
 
@@ -63,18 +97,29 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin size={18} className="text-amber-500 mt-0.5 mr-2 flex-shrink-0" />
+                <MapPin
+                  size={18}
+                  className="text-blue-900 mt-0.5 mr-2 flex-shrink-0"
+                />
                 <span className="text-neutral-400 text-sm">
                   Dulegaunda, Bhimad, Pokhara, Nepal
                 </span>
               </li>
               <li className="flex items-center">
-                <Phone size={18} className="text-amber-500 mr-2 flex-shrink-0" />
-                <span className="text-neutral-400 text-sm">984-6365892, 985-6012312</span>
+                <Phone
+                  size={18}
+                  className="text-blue-900 mr-2 flex-shrink-0"
+                />
+                <span className="text-neutral-400 text-sm">
+                  984-6365892, 985-6012312
+                </span>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="text-amber-500 mr-2 flex-shrink-0" />
-                <a href="mailto:moticreation2024@gmail.com" className="text-neutral-400 hover:text-amber-500 text-sm">
+                <Mail size={18} className="text-blue-900 mr-2 flex-shrink-0" />
+                <a
+                  href="mailto:moticreation2024@gmail.com"
+                  className="text-neutral-400 hover:text-amber-500 text-sm"
+                >
                   moticreation2024@gmail.com
                 </a>
               </li>
@@ -83,18 +128,20 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-neutral-800 mt-12 pt-6 text-center text-sm text-neutral-500">
-          <p>© {new Date().getFullYear()} LensLife Photography. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Moti Creation. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
   );
 };
 
-const SocialLink: React.FC<{ href: string; icon: React.ReactNode; label: string }> = ({
-  href,
-  icon,
-  label,
-}) => (
+const SocialLink: React.FC<{
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}> = ({ href, icon, label }) => (
   <a
     href={href}
     className="text-neutral-400 hover:text-amber-500 transition-colors"
@@ -105,19 +152,18 @@ const SocialLink: React.FC<{ href: string; icon: React.ReactNode; label: string 
 );
 
 const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'Portfolio', path: '/portfolio' },
-  { label: 'Video Gallery', path: '/video-gallery' },
-  { label: 'Packages', path: '/packages' },
-  { label: 'Blog', path: '/blog' },
-  { label: 'Contact', path: '/contact' },
+  { label: "Home", path: "/" },
+  { label: "Portfolio", path: "/portfolio" },
+  { label: "Video Gallery", path: "/video-gallery" },
+  { label: "Packages", path: "/packages" },
+  { label: "Contact", path: "/contact" },
 ];
 
 const services = [
-  { label: 'Photography', path: '/portfolio' },
-  { label: 'Maternity Sessions', path: '/maternity' },
-  { label: 'Family Portraits', path: '/portfolio' },
-  { label: 'Videography', path: '/video-gallery' },
+  { label: "Photography", path: "/portfolio" },
+  { label: "Maternity Sessions", path: "/maternity" },
+  { label: "Family Portraits", path: "/portfolio" },
+  { label: "Videography", path: "/video-gallery" },
 ];
 
 export default Footer;

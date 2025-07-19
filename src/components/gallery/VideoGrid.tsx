@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Play, X } from 'lucide-react';
 
-interface Video {
+export interface Video {
   id: string;
   thumbnailUrl: string;
   videoUrl: string;
@@ -24,18 +24,20 @@ const VideoGrid: React.FC<VideoGridProps> = ({ videos, categories }) => {
 
   const openVideo = (video: Video) => {
     setActiveVideo(video);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // prevent scroll when modal open
   };
 
   const closeVideo = () => {
     setActiveVideo(null);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto'; // restore scroll
   };
 
   return (
     <div className="w-full">
+      {/* Category Buttons */}
       <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
         <button
+          aria-pressed={selectedCategory === 'all'}
           className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
             selectedCategory === 'all'
               ? 'bg-amber-700 text-white'
@@ -48,6 +50,7 @@ const VideoGrid: React.FC<VideoGridProps> = ({ videos, categories }) => {
         {categories.map((category) => (
           <button
             key={category}
+            aria-pressed={selectedCategory === category}
             className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
               selectedCategory === category
                 ? 'bg-amber-700 text-white'
@@ -60,15 +63,16 @@ const VideoGrid: React.FC<VideoGridProps> = ({ videos, categories }) => {
         ))}
       </div>
 
+      {/* Video Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {filteredVideos.map((video) => (
-          <div 
+          <div
             key={video.id}
             className="group relative overflow-hidden rounded-lg shadow-md h-64 md:h-80 cursor-pointer transform transition-transform hover:scale-[1.02]"
             onClick={() => openVideo(video)}
           >
-            <img 
-              src={video.thumbnailUrl} 
+            <img
+              src={video.thumbnailUrl}
               alt={video.title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -87,18 +91,18 @@ const VideoGrid: React.FC<VideoGridProps> = ({ videos, categories }) => {
 
       {/* Video Modal */}
       {activeVideo && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
           onClick={closeVideo}
         >
-          <button 
+          <button
             className="absolute top-6 right-6 text-white hover:text-amber-500 transition-colors"
             onClick={closeVideo}
             aria-label="Close video"
           >
             <X size={32} />
           </button>
-          <div 
+          <div
             className="w-full max-w-4xl max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
@@ -107,10 +111,11 @@ const VideoGrid: React.FC<VideoGridProps> = ({ videos, categories }) => {
               <iframe
                 src={activeVideo.videoUrl}
                 title={activeVideo.title}
-                className="absolute top-0 left-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                sandbox="allow-same-origin allow-scripts allow-presentation"
+                allow="autoplay; clipboard-write; encrypted-media"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
           </div>
         </div>

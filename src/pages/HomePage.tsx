@@ -1,10 +1,9 @@
 import React from "react";
 import Hero from "../components/home/Hero";
 import Services from "../components/home/Services";
-import Testimonials from "../components/home/Testimonials";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import PhotographySession from "../assets/Home/024A5859.jpg";
 // Import sample data
 import { photos } from "../data/photos";
 import PhotoGrid from "../components/gallery/PhotoGrid";
@@ -47,11 +46,10 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-      <Testimonials />
       {/* CTA Section */}
       <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r from-amber-700 to-amber-900 rounded-lg shadow-xl overflow-hidden">
+          <div className="bg-gradient-to-r bg-[#00078e] rounded-lg shadow-xl overflow-hidden">
             <div className="md:flex">
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
@@ -78,7 +76,7 @@ const HomePage: React.FC = () => {
               </div>
               <div className="md:w-1/2 relative min-h-[300px]">
                 <img
-                  src="https://images.pexels.com/photos/1488318/pexels-photo-1488318.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                  src={PhotographySession}
                   alt="Photography session"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
