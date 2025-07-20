@@ -7,12 +7,19 @@ interface NavbarProps {
   isScrolled: boolean;
 }
 
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "Portfolio", path: "/portfolio" },
+  { label: "Video Gallery", path: "/video-gallery" },
+  { label: "Maternity", path: "/maternity" },
+  { label: "Packages", path: "/packages" },
+  { label: "Contact", path: "/contact" },
+];
+
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  // Close menu when a link is clicked
   const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
@@ -22,6 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        {/* Logo */}
         <NavLink to="/" className="flex items-center">
           <img
             src={logo}
@@ -37,9 +45,9 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-blue-800 ${
+                `text-sm font-medium transition-all hover:text-blue-800 pb-1 ${
                   isActive
-                    ? "text-blue-800"
+                    ? "text-blue-800 border-b-2 border-blue-800"
                     : isScrolled
                     ? "text-neutral-900"
                     : "text-white"
@@ -60,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Mobile Fullscreen Overlay Menu */}
+        {/* Mobile Fullscreen Menu */}
         {isMenuOpen && (
           <div
             className="fixed inset-0 bg-white z-50 flex flex-col justify-center items-center space-y-8 text-xl font-semibold"
@@ -70,8 +78,12 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <NavLink
                 key={link.path}
                 to={link.path}
-                className="text-neutral-900 hover:text-blue-800"
                 onClick={handleLinkClick}
+                className={({ isActive }) =>
+                  `text-neutral-900 hover:text-blue-800 ${
+                    isActive ? "border-b-2 border-blue-800 pb-1" : ""
+                  }`
+                }
               >
                 {link.label}
               </NavLink>
@@ -82,14 +94,5 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
     </header>
   );
 };
-
-const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Portfolio", path: "/portfolio" },
-  { label: "Video Gallery", path: "/video-gallery" },
-  { label: "Maternity", path: "/maternity" },
-  { label: "Packages", path: "/packages" },
-  { label: "Contact", path: "/contact" },
-];
 
 export default Navbar;
