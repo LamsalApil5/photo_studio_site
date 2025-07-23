@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HeroCover from "../../assets/logo/cover.jpg";
+import HeroCover from "../../assets/videos/final_video.mp4";
 const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video or Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={HeroCover}
-          alt="Hero Background"
+        <video
           className="object-cover w-full h-full"
-        />
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src={HeroCover} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
       </div>
 
