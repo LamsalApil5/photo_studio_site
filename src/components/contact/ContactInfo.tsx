@@ -12,7 +12,7 @@ import { BsTiktok } from "react-icons/bs";
 
 const ContactInfo: React.FC = () => {
   return (
-    <div className="bg-red-900 text-white rounded-lg shadow-md p-6 md:p-8 h-full">
+    <div className="bg-[#333333] text-white rounded-lg shadow-md p-6 md:p-8 h-full">
       <h2 className="text-2xl font-serif font-bold mb-6">
         Contact Information
       </h2>
@@ -24,11 +24,26 @@ const ContactInfo: React.FC = () => {
             className="text-amber-500 mt-1 mr-3 flex-shrink-0"
           />
           <div>
-            <h3 className="font-medium text- mb-1">Our Location</h3>
+            <h3 className="font-medium mb-1">Head Office</h3>
+            <p className="text-neutral-300">
+              Newroad, 7th Street
+              <br />
+              Pokhara, Nepal
+            </p>
+          </div>
+        </li>
+
+        <li className="flex mt-4">
+          <MapPin
+            size={20}
+            className="text-amber-500 mt-1 mr-3 flex-shrink-0"
+          />
+          <div>
+            <h3 className="font-medium mb-1">Branch Office</h3>
             <p className="text-neutral-300">
               Dulegaunda, Bhimad
               <br />
-              Pokhara, Nepal
+              Tanahun, Nepal
             </p>
           </div>
         </li>

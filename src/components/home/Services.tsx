@@ -76,7 +76,7 @@ const Services: React.FC = () => {
               <p className="text-neutral-600 mb-4">{service.description}</p>
               <Link
                 to={service.path}
-                className="text-amber-700 font-medium hover:text-amber-800 transition-colors inline-flex items-center"
+                className="text-[#F6891E] font-medium hover:text-amber-800 transition-colors inline-flex items-center"
               >
                 View
                 <svg

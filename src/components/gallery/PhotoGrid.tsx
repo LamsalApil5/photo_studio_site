@@ -38,7 +38,7 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ photos, categories }) => {
         <button
           className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
             selectedCategory === 'all'
-              ? 'bg-amber-700 text-white'
+              ? 'bg-[#F6891E] text-white'
               : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300'
           }`}
           onClick={() => setSelectedCategory('all')}
@@ -50,7 +50,7 @@ const PhotoGrid: React.FC<PhotoGridProps> = ({ photos, categories }) => {
             key={category}
             className={`px-4 py-2 text-sm font-medium rounded-full transition-colors ${
               selectedCategory === category
-                ? 'bg-amber-700 text-white'
+                ? 'bg-[#F6891E] text-white'
                 : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300'
             }`}
             onClick={() => setSelectedCategory(category)}

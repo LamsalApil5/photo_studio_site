@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
           <div className="text-center mt-10">
             <Link
               to="/portfolio"
-              className="inline-flex items-center px-6 py-3 bg-amber-700 text-white rounded-md font-medium transition-colors hover:bg-amber-800"
+              className="inline-flex items-center px-6 py-3 bg-[#F6891E] text-white rounded-md font-medium transition-colors hover:bg-amber-800"
             >
               View Full Portfolio
               <ArrowRight size={18} className="ml-2" />
@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
       {/* CTA Section */}
       <section className="py-16 bg-neutral-100">
         <div className="container mx-auto px-4">
-          <div className="bg-gradient-to-r bg-[#00078e] rounded-lg shadow-xl overflow-hidden">
+          <div className="bg-gradient-to-r bg-[#F6891E] rounded-lg shadow-xl overflow-hidden">
             <div className="md:flex">
               <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">

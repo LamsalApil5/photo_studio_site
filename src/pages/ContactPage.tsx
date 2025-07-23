@@ -48,10 +48,10 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Map */}
-      <section className="h-[400px] bg-neutral-200 relative">
+      <section className="h-[400px] bg-[#F6891E] relative">
         <div className="absolute inset-0">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108273.52754587925!2d83.9896186390464!3d28.052266500000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995bb96612a90b7%3A0x688cd371ddb4368f!2sMoti%20Digital%20Studio!5e1!3m2!1sen!2snp!4v1752932628182!5m2!1sen!2snp"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3378.4539174254237!2d83.9853682!3d28.2137091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399595002c449db1%3A0x91656c37cc27d98a!2sMoti%20Creation!5e1!3m2!1sen!2snp!4v1753282470260!5m2!1sen!2snp"
             width="100%"
             height="100%"
             style={{ border: 0 }}

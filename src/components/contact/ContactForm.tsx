@@ -239,8 +239,8 @@ const ContactForm: React.FC = () => {
           disabled={isSubmitting}
           className={`w-full py-3 px-4 rounded-md font-medium text-white transition-colors ${
             isSubmitting
-              ? "bg-amber-600 cursor-not-allowed"
-              : "bg-amber-700 hover:bg-amber-800"
+              ? "bg-[#F6891E] cursor-not-allowed"
+              : "bg-[#F6891E] hover:bg-[#b2702f]"
           }`}
         >
           {isSubmitting ? (

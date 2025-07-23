@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               <img
                 src={logo} // make sure `logo` is imported correctly
                 alt="Moti Creation Logo"
-                className="w-12" // 6 * 4px = 24px
+                className="w-14 h-fit bg-white" // 6 * 4px = 24px
               />
               <span className="font-serif text-xl font-bold tracking-tight">
                 Moti Creation
@@ -96,26 +96,39 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
+              {/* Head Office */}
               <li className="flex items-start">
                 <MapPin
                   size={18}
-                  className="text-blue-900 mt-0.5 mr-2 flex-shrink-0"
+                  className="text-[#F6891E] mt-0.5 mr-2 flex-shrink-0"
                 />
                 <span className="text-neutral-400 text-sm">
-                  Dulegaunda, Bhimad, Pokhara, Nepal
+                  Newroad, 7th Street, Pokhara, Nepal
                 </span>
               </li>
+
+              {/* Branch Office */}
+              <li className="flex items-start mt-3">
+                <MapPin
+                  size={18}
+                  className="text-[#F6891E] mt-0.5 mr-2 flex-shrink-0"
+                />
+                <span className="text-neutral-400 text-sm">
+                  Dulegaunda, Bhimad, Tanahun, Nepal
+                </span>
+              </li>
+
               <li className="flex items-center">
                 <Phone
                   size={18}
-                  className="text-blue-900 mr-2 flex-shrink-0"
+                  className="text-[#F6891E] mr-2 flex-shrink-0"
                 />
                 <span className="text-neutral-400 text-sm">
                   984-6365892, 985-6012312
                 </span>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="text-blue-900 mr-2 flex-shrink-0" />
+                <Mail size={18} className="text-[#F6891E] mr-2 flex-shrink-0" />
                 <a
                   href="mailto:moticreation2024@gmail.com"
                   className="text-neutral-400 hover:text-amber-500 text-sm"

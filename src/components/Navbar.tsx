@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
           <img
             src={logo}
             alt="Moti Creation Logo"
-            className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain"
+            className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain p-2 bg-white/80 rounded-md"
           />
         </NavLink>
 
