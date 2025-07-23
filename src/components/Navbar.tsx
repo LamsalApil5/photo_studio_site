@@ -45,11 +45,11 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `text-sm font-medium transition-all hover:text-blue-800 pb-1 ${
+                `text-sm font-medium transition-all hover:text-[#F6891E] pb-1 ${
                   isActive
-                    ? "text-blue-800 border-b-2 border-blue-800"
+                    ? "text-[#F6891E] border-b-2 border-[#F6891E]"
                     : isScrolled
-                    ? "text-neutral-900"
+                    ? "text-[#333333]"
                     : "text-white"
                 }`
               }
@@ -61,7 +61,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-blue-950 focus:outline-none z-60"
+          className="md:hidden text-[#F6891E] focus:outline-none z-60"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
