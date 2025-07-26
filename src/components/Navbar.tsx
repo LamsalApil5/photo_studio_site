@@ -11,7 +11,6 @@ const navLinks = [
   { label: "Home", path: "/" },
   { label: "Portfolio", path: "/portfolio" },
   { label: "Video Gallery", path: "/video-gallery" },
-  { label: "Maternity", path: "/maternity" },
   { label: "Packages", path: "/packages" },
   { label: "Contact", path: "/contact" },
 ];

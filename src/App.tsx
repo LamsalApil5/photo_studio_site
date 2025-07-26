@@ -26,7 +26,6 @@ function App() {
                 <Route index element={<HomePage />} />
                 <Route path="portfolio" element={<PortfolioPage />} />
                 <Route path="video-gallery" element={<VideoGalleryPage />} />
-                <Route path="maternity" element={<MaternityPage />} />
                 <Route path="packages" element={<PackagesPage />} />
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="*" element={<NotFoundPage />} />

@@ -3,6 +3,7 @@ import PhotoGrid from "../components/gallery/PhotoGrid";
 import { photos, categories } from "../data/photos";
 import seoData from "../data/seoData";
 import Seo from "../components/Seo";
+import cover from "../assets/logo/cover.jpg";
 
 const PortfolioPage: React.FC = () => {
   const { title, description, keywords, image, url } = seoData.portfolio;
@@ -14,7 +15,7 @@ const PortfolioPage: React.FC = () => {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-neutral-900 text-white relative">
         <div className="absolute inset-0 z-0 opacity-30">
           <img
-            src="https://images.pexels.com/photos/2147486/pexels-photo-2147486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            src={cover}
             alt="Portfolio background"
             className="w-full h-full object-cover"
           />
