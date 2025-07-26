@@ -26,7 +26,7 @@ export const photos = Object.entries(imageFiles).map(([path, mod]) => {
       .replace(/\b\w/g, l => l.toUpperCase()), // capitalize
     url
   };
-});
+}); 
 
 // Create categories from folder names under /images/
 export const categories = Array.from(new Set(photos.map(photo => photo.category))).sort();

@@ -5,13 +5,12 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PhotographySession from "../assets/Home/024A5859.jpg";
 // Import sample data
-import { photos } from "../data/photos";
+import { categories, photos } from "../data/photos";
 import PhotoGrid from "../components/gallery/PhotoGrid";
 import seoData from "../data/seoData";
 import Seo from "../components/Seo";
 
 const featuredPhotos = photos.slice(0, 6);
-const categories = ["Wedding", "Portrait", "Family", "Event", "Commercial"];
 const { title, description, keywords, image, url } = seoData.home;
 
 const HomePage: React.FC = () => {
