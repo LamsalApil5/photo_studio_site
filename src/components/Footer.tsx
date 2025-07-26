@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4 pt-2">
               <SocialLink
-                href="#"
+                href="https://www.instagram.com/moti_creation?utm_source=ig_web_button_share_sheet&igsh=Ymx4dDNqejFhcWkw"
                 icon={<Instagram size={18} />}
                 label="Instagram"
               />
@@ -46,12 +46,17 @@ const Footer: React.FC = () => {
                 label="Facebook"
               />
               <SocialLink
-                href="#"
+                href="https://www.tiktok.com/@motiframepokhara?_t=ZS-8yLX7rX7FI2&_r=1"
                 icon={<FaTiktok size={18} />}
                 label="Tiktok"
               />
               <SocialLink
-                href="https://www.youtube.com/channel/UCsdb-55lSvMJOQ5kEa13U2A"
+                href="https://www.youtube.com/@MotiCreation/featured"
+                icon={<Youtube size={18} />}
+                label="Youtube"
+              />
+              <SocialLink
+                href="https://www.youtube.com/@motidigitalstudio1100"
                 icon={<Youtube size={18} />}
                 label="Youtube"
               />

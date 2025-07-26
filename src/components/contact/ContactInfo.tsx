@@ -87,28 +87,45 @@ const ContactInfo: React.FC = () => {
         <h3 className="font-medium text-amber-300 mb-3">Connect With Us</h3>
         <div className="flex space-x-4">
           <a
-            href="#"
+            href="https://www.instagram.com/moti_creation?utm_source=ig_web_button_share_sheet&igsh=Ymx4dDNqejFhcWkw"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-amber-700 transition-colors p-2 rounded-full"
             aria-label="Instagram"
           >
             <Instagram size={20} className="text-white" />
           </a>
           <a
-            href="#"
+            href="https://www.facebook.com/moticreationnepal"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-amber-700 transition-colors p-2 rounded-full"
             aria-label="Facebook"
           >
             <Facebook size={20} className="text-white" />
           </a>
           <a
-            href="#"
+            href="https://www.tiktok.com/@motiframepokhara?_t=ZS-8yLX7rX7FI2&_r=1"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-amber-700 transition-colors p-2 rounded-full"
             aria-label="Tiktok"
           >
             <BsTiktok size={20} className="text-white" />
           </a>
           <a
-            href="#"
+            href="https://www.youtube.com/@MotiCreation/featured"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/10 hover:bg-amber-700 transition-colors p-2 rounded-full"
+            aria-label="YouTube"
+          >
+            <Youtube size={20} className="text-white" />
+          </a>
+          <a
+            href="https://www.youtube.com/@motidigitalstudio1100"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-white/10 hover:bg-amber-700 transition-colors p-2 rounded-full"
             aria-label="YouTube"
           >
